@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF975F68A5209CE9396A0943 /* Pods_AblyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CEBC31E9A390B2375983AF /* Pods_AblyTest.framework */; };
 		D3ADDD5D2024BBA900B28BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADDD5C2024BBA900B28BBB /* AppDelegate.swift */; };
 		D3ADDD5F2024BBA900B28BBB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADDD5E2024BBA900B28BBB /* MasterViewController.swift */; };
 		D3ADDD612024BBA900B28BBB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ADDD602024BBA900B28BBB /* DetailViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66F38727ED986BF0C54D2E55 /* Pods-AblyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AblyTest/Pods-AblyTest.release.xcconfig"; sourceTree = "<group>"; };
+		6AEC2384844FF50488BEB86A /* Pods-AblyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AblyTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AblyTest/Pods-AblyTest.debug.xcconfig"; sourceTree = "<group>"; };
+		C7CEBC31E9A390B2375983AF /* Pods_AblyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AblyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3ADDD592024BBA900B28BBB /* AblyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AblyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3ADDD5C2024BBA900B28BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3ADDD5E2024BBA900B28BBB /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF975F68A5209CE9396A0943 /* Pods_AblyTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		510B73A2D1319E5349E21AB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AEC2384844FF50488BEB86A /* Pods-AblyTest.debug.xcconfig */,
+				66F38727ED986BF0C54D2E55 /* Pods-AblyTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ADF17D7E8AB9F799A662F5C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEBC31E9A390B2375983AF /* Pods_AblyTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D3ADDD502024BBA900B28BBB = {
 			isa = PBXGroup;
 			children = (
 				D3ADDD5B2024BBA900B28BBB /* AblyTest */,
 				D3ADDD5A2024BBA900B28BBB /* Products */,
+				510B73A2D1319E5349E21AB2 /* Pods */,
+				ADF17D7E8AB9F799A662F5C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3ADDD6D2024BBA900B28BBB /* Build configuration list for PBXNativeTarget "AblyTest" */;
 			buildPhases = (
+				4E0101E95451E09D17844978 /* [CP] Check Pods Manifest.lock */,
 				D3ADDD552024BBA900B28BBB /* Sources */,
 				D3ADDD562024BBA900B28BBB /* Frameworks */,
 				D3ADDD572024BBA900B28BBB /* Resources */,
+				6DE14C42F740F56A2B98C0F1 /* [CP] Embed Pods Frameworks */,
+				C9919A743E9537FE787D7209 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E0101E95451E09D17844978 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AblyTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DE14C42F740F56A2B98C0F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AblyTest/Pods-AblyTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Ably/Ably.framework",
+				"${BUILT_PRODUCTS_DIR}/KSCrashAblyFork/KSCrashAblyFork.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/msgpack/msgpack.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ably.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSCrashAblyFork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/msgpack.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AblyTest/Pods-AblyTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9919A743E9537FE787D7209 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AblyTest/Pods-AblyTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3ADDD552024BBA900B28BBB /* Sources */ = {
@@ -276,6 +363,7 @@
 		};
 		D3ADDD6E2024BBA900B28BBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AEC2384844FF50488BEB86A /* Pods-AblyTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +379,7 @@
 		};
 		D3ADDD6F2024BBA900B28BBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66F38727ED986BF0C54D2E55 /* Pods-AblyTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
